@@ -9,6 +9,6 @@ import org.springframework.web.bind.annotation.ResponseBody;
 public class BookController {
 @RequestMapping("/index")
 public String hello() {
-return "Welcome to the Bookstore";
+return "index";
 	}
 }
