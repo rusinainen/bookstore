@@ -7,7 +7,6 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import hh.swd20.domain.Book;
-import hh.swd20.domain.Category;
 import hh.swd20.domain.BookRepository;
 import hh.swd20.domain.CategoryRepository;
 
@@ -34,6 +33,7 @@ public class BookController {
 	@RequestMapping(value="/add")
 	public String addBook(Model model) {
 		model.addAttribute("book", new Book());
+		model.addAttribute("categories", crepository.findAll());
 		return "addbook";
 		}
 	

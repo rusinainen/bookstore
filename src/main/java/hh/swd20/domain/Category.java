@@ -1,16 +1,23 @@
 package hh.swd20.domain;
 
+import java.util.List;
+
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
 
 @Entity
 public class Category {
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
-	private Long id;
+	private Long catId;
 	private String name;
+	
+	@OneToMany(cascade = CascadeType.ALL, mappedBy = "category")
+	private List<Book> books;
 	
 	public Category() {}
 	
@@ -20,11 +27,11 @@ public class Category {
 	}
 	
 	public Long getId() {
-		return id;
+		return catId;
 	}
 	
-	public void setId(Long id) {
-		this.id = id;
+	public void setId(Long catId) {
+		this.catId = catId;
 	}
 	
 	public String getName() {
