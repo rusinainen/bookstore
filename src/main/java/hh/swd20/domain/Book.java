@@ -17,10 +17,10 @@ public class Book {
 	private int year;
 	private double price;
 	
-	  @ManyToOne
 	  @JsonManagedReference
-	    @JoinColumn(name = "catId")
-	    private Category category;
+	  @ManyToOne
+	  @JoinColumn(name = "catId")
+	  private Category category;
 	
 	public Book() {}
 	
